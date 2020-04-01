@@ -1,0 +1,185 @@
+@model CSGS.Models.Entities.CursoExt
+@inject IViewLocalizer Localizer
+@inject IAuthorizationService AuthorizationService
+@{
+    ViewData["Title"] = "Create";
+}
+
+<br /><br />
+<h2>Crear nuevo curso</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+       
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        
+        <h2>Solicitante: @ViewBag.IdCursoExt</h2>
+        @*<div class="form-group">
+            <label asp-for="IdSolicitud" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="IdSolicitud" class="form-control" />
+                <span asp-validation-for="IdSolicitud" class="text-danger" />
+            </div>
+        </div>*@
+
+
+
+       @*<div class="form-group">
+            <label asp-for="IdSolicitante" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="IdSolicitante" class="form-control" />@ViewBag.IdSolicitante
+                <span asp-validation-for="IdSolicitante" class="text-danger" />
+            </div>
+        </div>*@
+       
+        
+
+
+@*
+    <div class="form-group">
+        <label asp-for="IdSupervisor" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            <input asp-for="IdSupervisor" class="form-control" />
+            <span asp-validation-for="IdSupervisor" class="text-danger" />
+        </div>
+    </div>*@
+        <div class="form-group">
+            <label asp-for="IdCategoriaExt" class="col-md-2 control-label">Motivo</label>
+            <div class="col-md-10">
+                @*<input asp-for="IdMotivo" class="form-control" />
+                <span asp-validation-for="IdMotivo" class="text-danger" />*@
+                <select asp-for="IdCategoriaExt" class="form-control"
+                        asp-items="@(new SelectList(ViewBag.CategoriaExt,"IdCategoriaExt", "NombreCategoriaExt"))"></select>
+            
+            
+            </div>
+        </div>
+
+
+
+        @*<div class="form-group">
+            <label asp-for="IdEstado" class="col-md-2 control-label">Estado</label>
+            <div class="col-md-10">
+                <input asp-for="IdEstado" class="form-control" />
+                <span asp-validation-for="IdEstado" class="text-danger" />
+            </div>
+        </div>*@
+
+
+
+
+        <div class="form-group">
+            <label asp-for="TituloCursoExt" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="TituloCursoExt" class="form-control" />
+                <span asp-validation-for="TituloCursoExt" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="DescripcionCursoExt" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DescripcionCursoExt" class="form-control" />
+                <span asp-validation-for="DescripcionCursoExt" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ObjetivosCurso" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ObjetivosCurso" class="form-control" />
+                <span asp-validation-for="ObjetivosCurso" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="ReqCurso" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="ReqCurso" class="form-control" />
+                <span asp-validation-for="ReqCurso" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="TemarioCurso" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="TemarioCurso" class="form-control" />
+                <span asp-validation-for="TemarioCurso" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="NivelCurso" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="NivelCurso" class="form-control" />
+                <span asp-validation-for="NivelCurso" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="FechaInicioClases" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FechaInicioClases" class="form-control" />
+                <span asp-validation-for="FechaInicioClases" class="text-danger" />
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <label asp-for="FechaInicioMat" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FechaInicioMat" class="form-control" />
+                <span asp-validation-for="FechaInicioMat" class="text-danger" />
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label asp-for="FechaFinMat" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="FechaFinMat" class="form-control" />
+                <span asp-validation-for="FechaFinMat" class="text-danger" />
+            </div>
+        </div>
+
+
+
+
+        <div class="form-group">
+            <label asp-for="AudienciaCurso" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="AudienciaCurso" class="form-control" />
+                <span asp-validation-for="AudienciaCurso" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="DuracionCurso" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="DuracionCurso" class="form-control" />
+                <span asp-validation-for="DuracionCurso" class="text-danger" />
+            </div>
+        </div>
+
+
+
+        @*<div class="form-group">
+            <label asp-for="SustentoSupervisor" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="SustentoSupervisor" class="form-control" />
+                <span asp-validation-for="SustentoSupervisor" class="text-danger" />
+            </div>
+        </div>*@
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

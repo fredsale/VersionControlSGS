@@ -1,0 +1,95 @@
+@model CSGS.Models.Entities.MatriculaDoc
+
+@{
+    ViewData["Title"] = "Create";
+}
+<br /><br />
+<h2>Detalles</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="IdMatriculaDoc" />
+    <div class="form-horizontal">
+
+
+        <h4>Detalle del curso matriculado</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <h2> @ViewBag.IdEstudiante</h2>
+    
+        @*<h2>
+            @ViewBag.prueba
+        </h2>*@
+
+
+                @*<div class="form-group">
+                <label asp-for="IdMatriculaDoc" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="IdMatriculaDoc" class="form-control" />
+                    <span asp-validation-for="IdMatriculaDoc" class="text-danger" />
+                </div>
+            </div>*@
+                @*<div class="form-group">
+                <label asp-for="IdEstudiante" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="IdEstudiante" class="form-control" />
+                    <span asp-validation-for="IdEstudiante" class="text-danger" />
+                </div>
+            </div>*@
+
+   
+ 
+        @*<input type="text" value="@(ViewBag.prueba)" readonly/>*@
+
+
+                @*<div class="form-group" style="visibility:hidden">*@
+                <div class="form-group">
+                    <label asp-for="IdEstudiante" class="col-md-2 control-label">Codigo estudiante</label>
+                    <div class="col-md-10">
+                        <input asp-for="IdEstudiante" class="form-control" readonly />@ViewBag.IdEstudiante
+                        <span asp-validation-for="IdEstudiante" class="text-danger" />
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <label asp-for="IdCursoExt" class="col-md-2 control-label">Categoria</label>
+                    <div class="col-md-10">
+
+                        <select asp-for="IdCursoExt" class="form-control"
+                                asp-items="@(new SelectList(ViewBag.CursoExt,"IdCursoExt", "TituloCursoExt"))" disabled></select>
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="form-group">
+                    <label asp-for="Fechamatricula" class="col-md-2 control-label">Fecha de matricula</label>
+                    <div class="col-md-10">
+                        <input asp-for="Fechamatricula" class="form-control" readonly />
+                        <span asp-validation-for="Fechamatricula" class="text-danger" />
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        @*<input type="hidden" value="Save" class="btn btn-default" />*@
+                    </div>
+                </div>
+</div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,111 @@
+@model IEnumerable<CSGS.Models.Entities.Solicitud>
+@inject IViewLocalizer Localizer
+@inject IAuthorizationService AuthorizationService
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<h2>@Localizer["TitleCrearS"]</h2>
+<p>
+    <a asp-action="Create">@Localizer["ActionCreateNew"]</a>
+</p>
+@*<h2>@ViewBag.IdSolicitante</h2>*@
+
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                    Egresado
+                </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.IdSolicitante)
+            </th>*@
+            
+            <th>
+                @*@Html.DisplayNameFor(model => model.FechaViaje)*@
+                @Localizer["Table_FechaViaje"]
+            </th>
+
+
+            @*<th>
+                @Html.DisplayNameFor(model => model.IdMotivo)
+            </th>*@
+            <th>@Localizer["Table_Motivo"]</th>
+            <th>
+                @Localizer["Table_DuracionViaje"]
+            </th>
+            <th>
+                @Localizer["Table_MontoGastar"]
+            </th>
+            <th>
+                @Localizer["Table_GastosMov"]
+            </th>
+            <th>
+                @Localizer["Table_GastosH"]
+            </th>
+
+            <th>@Localizer["Table_Estado"]</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+              @*<td>
+                    @Html.DisplayFor(modelItem => item.IdSolicitante)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaViaje)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.IdMotivo)
+                </td>*@
+                <td>@item.Motivo.NombreMotivo</td>
+  
+                <th>
+                @Html.DisplayFor(modelItem => item.DuracionViaje)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.MontoGastar)
+            </th>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.GastosMovilidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GastosHotel)
+                </td>
+
+             
+                <td>
+                    @*<product-stock stock="@item.Stock"></product-stock>*@
+                    @*<product-stock-div Estado="@item.IdEstado" stock="1"></product-stock-div>*@
+                    @*<product-stock-div Estado="@item.IdEstado" ></product-stock-div>*@
+                    <solicitud-estado estado="@item.IdEstado"></solicitud-estado>
+                    
+                </td>
+                <td>
+
+                    @*<a asp-action="Edit" asp-route-id="@item.IdSolicitud">Edit</a>*@
+
+                    <a asp-action="Detalles" asp-route-id="@item.IdSolicitud">@Localizer["ActionDetail"]</a>
+
+
+
+
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

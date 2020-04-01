@@ -1,0 +1,135 @@
+@model IEnumerable<CSGS.Models.Entities.MatriculaDoc>
+@inject IViewLocalizer Localizer
+@inject IAuthorizationService AuthorizationService
+@{
+    ViewData["Title"] = "Index";
+}
+<br /><br />
+<h2>Lista de estudiantes matriculados</h2>
+
+
+<p>
+    <a asp-action="Create">@Localizer["ActionCreateNew"]</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+                    Egresado
+                </th>*@
+            @*<th>
+                    @Html.DisplayNameFor(model => model.IdSolicitante)
+                </th>*@
+            <th>
+
+                Id
+            </th>
+            <th>
+
+                IdEstudiante
+            </th>
+
+
+            @*<th>
+
+                </th>*@
+            <th>Curso Matriculado</th>
+            <th>
+
+                Fecha de matricula
+            </th>
+
+
+            <th>Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.IdSolicitante)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdMatriculaDoc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdEstudiante)
+                </td>
+
+
+                <td>@item.CursoExt.TituloCursoExt</td>
+
+               
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fechamatricula)
+                </td>
+
+                <td>
+
+                    @*<a asp-action="Edit" asp-route-id="@item.IdSolicitud">Edit</a>*@
+
+                    <a asp-action="Detalles" asp-route-id="@item.IdCursoExt">@Localizer["ActionDetail"]</a>
+
+
+
+
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*<form asp-action="Index">
+        <div class="form-horizontal">
+            <h4>MatriculaDoc</h4>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdMatriculaDoc" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="IdMatriculaDoc" class="form-control" />
+                    <span asp-validation-for="IdMatriculaDoc" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdEstudiante" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="IdEstudiante" class="form-control" />
+                    <span asp-validation-for="IdEstudiante" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdCursoExt" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="IdCursoExt" class="form-control" />
+                    <span asp-validation-for="IdCursoExt" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fechamatricula" class="col-md-2 control-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Fechamatricula" class="form-control" />
+                    <span asp-validation-for="Fechamatricula" class="text-danger" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </form>*@
+
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
