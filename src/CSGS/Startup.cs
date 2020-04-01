@@ -60,12 +60,12 @@ namespace CSGS
 
 
             services.AddAuthorization(
-                options => options.AddPolicy("AllowSearch", policy => policy.RequireRole("Admin","Customer","Guest"))
+                options => options.AddPolicy("AllowSearch", policy => policy.RequireRole("Admin","Student","Guest"))
 
                 );
 
             services.AddAuthorization(
-          options => options.AddPolicy("AllowCreate", policy => policy.RequireRole("Customer","Admin"))
+          options => options.AddPolicy("AllowCreate", policy => policy.RequireRole("Student", "Admin"))
 
           );
 
@@ -80,7 +80,7 @@ namespace CSGS
                   );
 
             services.AddAuthorization(
-                options => options.AddPolicy("AllowStudents", policy => policy.RequireRole("Customer"))
+                options => options.AddPolicy("AllowStudents", policy => policy.RequireRole("Student"))
 
                 );
 

@@ -9,7 +9,7 @@
 
 
 <p>
-    <a asp-action="Create">@Localizer["ActionCreateNew"]</a>
+    <a asp-action="Create">Nueva Matricula</a>
 </p>
 
 <table class="table">
@@ -41,7 +41,7 @@
             </th>
 
 
-            <th>Accion</th>
+            <th>Detalles</th>
         </tr>
     </thead>
     <tbody>
@@ -71,7 +71,7 @@
 
                     @*<a asp-action="Edit" asp-route-id="@item.IdSolicitud">Edit</a>*@
 
-                    <a asp-action="Detalles" asp-route-id="@item.IdCursoExt">@Localizer["ActionDetail"]</a>
+                    <a asp-action="Detalles" asp-route-id="@item.IdCursoExt">Ver mas</a>
 
 
 

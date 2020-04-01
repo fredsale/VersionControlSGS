@@ -8,6 +8,9 @@
 <br /><br />
 <h2>Registro de Matricula</h2>
 
+
+<h5>En la lista de abajo encontraras los cursos disponibles para matricularte, no te olvides hacer clic en el boton enviar para confirmar tu matricula.</h5>
+
 <form asp-action="Create">
     <div class="form-horizontal">
         <h4>MatriculaDoc</h4>
@@ -27,7 +30,7 @@
                 <span asp-validation-for="IdEstudiante" class="text-danger" />
             </div>
         </div>*@
-        <h2>Estudiante: @ViewBag.IdEstudiante</h2>
+        <h4>Estudiante: @ViewBag.IdEstudiante</h4>
 
         <div class="form-group">
             <label asp-for="IdCursoExt" class="col-md-2 control-label">Curso</label>

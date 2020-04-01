@@ -6,11 +6,14 @@
 }
 <br />
 <br />
-<h2>@Localizer["TitleCrearS"]</h2>
+<h2>Listado de cursos</h2>
+<br />
+<br />
+
 <p>
-    <a asp-action="Create">@Localizer["ActionCreateNew"]</a>
+    <a asp-action="Create">Crear nuevo curso</a>
 </p>
-<h2>Index</h2>
+
 
 <table class="table">
     <thead>
@@ -46,10 +49,10 @@
                 Fecha inicio clases
             </th>
             <th>
-                Duracion
+                Duracion(horas)
             </th>
 
-                <th>Accion</th>
+                <th>Detalles</th>
         </tr>
     </thead>
     <tbody>
@@ -87,7 +90,7 @@
 
                     @*<a asp-action="Edit" asp-route-id="@item.IdSolicitud">Edit</a>*@
 
-                    <a asp-action="Edit" asp-route-id="@item.IdCursoExt">@Localizer["ActionDetail"]</a>
+                    <a asp-action="Edit" asp-route-id="@item.IdCursoExt">Ver mas</a>
 
 
 
