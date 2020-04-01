@@ -12,17 +12,7 @@ namespace CSGS.Data
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
 
-        public virtual DbSet<Solicitud> Solicitud { get; set; }
 
-        public virtual DbSet<Estado> Estado { get; set; }
-
-        public virtual DbSet<Motivo> Motivo { get; set; }
-        
-        //public virtual DbSet<Prueba1> Prueba1 { get; set; }
-
-        //public virtual DbSet<Prueba2> Prueba2 { get; set; }
-
-        //public virtual DbSet<Prueba3> Prueba3 { get; set; }
                 
         public virtual DbSet<MatriculaDoc> MatriculaDoc { get; set; }
 

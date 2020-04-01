@@ -44,15 +44,14 @@
                     @if (await AuthorizationService.AuthorizeAsync(User, "AllowStudents"))
                     {
                         <li><a asp-area="" asp-controller="MatriculaDoc" asp-action="Index">Matricula</a></li>
-                            @*<li><a asp-area="" asp-controller="Solicitud" asp-action="Index">@Localizer["menu_msolici"].Value</a></li>*@
+                     
                         <li><a asp-area="" asp-controller="CursoExt" asp-action="IndexSG">Lista de Cursos</a></li>
                     }
 
                 }
                 @if (await AuthorizationService.AuthorizeAsync(User, "AllowSecurity"))
                 {
-                    @*<li><a asp-area="" asp-controller="Solicitud" asp-action="IndexP">@Localizer["menu_pendientes"].Value</a></li>
-                    <li><a asp-area="" asp-controller="Solicitud" asp-action="IndexAP">@Localizer["menu_aprobados"].Value</a></li>*@
+                 
                     <li><a asp-area="" asp-controller="CursoExt" asp-action="Index">Cursos</a></li>
                     <li><a asp-area="" asp-controller="MatriculaDoc" asp-action="IndexA">Lista de Matricula</a></li>
                 }
