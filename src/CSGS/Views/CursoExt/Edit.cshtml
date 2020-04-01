@@ -14,13 +14,6 @@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         
         <h2> @ViewBag.IdAdmin</h2>
-        @*<div class="form-group">
-            <label asp-for="IdSolicitud" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="IdSolicitud" class="form-control" />
-                <span asp-validation-for="IdSolicitud" class="text-danger" />
-            </div>
-        </div>*@
 
 
 
@@ -35,15 +28,7 @@
         
 
 
-@*
-    <div class="form-group">
-        <label asp-for="IdSupervisor" class="col-md-2 control-label"></label>
-        <div class="col-md-10">
-            <input asp-for="IdSupervisor" class="form-control" />
-            <span asp-validation-for="IdSupervisor" class="text-danger" />
-        </div>
-    </div>*@
-    
+   
         
             <div class="form-group">
             <label asp-for="IdCategoriaExt" class="col-md-2 control-label">Categoria</label>
@@ -58,13 +43,6 @@
 
 
 
-        @*<div class="form-group">
-            <label asp-for="IdEstado" class="col-md-2 control-label">Estado</label>
-            <div class="col-md-10">
-                <input asp-for="IdEstado" class="form-control" />
-                <span asp-validation-for="IdEstado" class="text-danger" />
-            </div>
-        </div>*@
 
 
 
@@ -169,20 +147,9 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" name="estado2" value="Guardar" class="btn btn-default"  />
-               
-                
-         
-
-
-                @*<input type="submit" name="estado3" value="Rechazar" class="btn btn-default" />*@
-
-
-
-
+              
                 <input type="hidden" name="IdCursoExt" value="IdCursoExt" />
-                @*<input type="hidden" name="productID" value="@item.ProductID" />
-                <input name="stock" value="@item.Stock" />*@
-
+     
             </div>
         </div>
     </div>

@@ -57,7 +57,7 @@ namespace CSGS
             services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
 
 
-
+            //Lugar donde se configura las politicas de autorizacion, para los usuarios : Admin, Student y Guest
 
             services.AddAuthorization(
                 options => options.AddPolicy("AllowSearch", policy => policy.RequireRole("Admin","Student","Guest"))
@@ -88,7 +88,7 @@ namespace CSGS
             options => options.AddPolicy("AllowGuests", policy => policy.RequireRole("Guest"))
 
             );
-
+            //Lugar donde se configura las politicas de autorizacion, para los usuarios : Admin, Student y Guest
 
 
             // Add application services.

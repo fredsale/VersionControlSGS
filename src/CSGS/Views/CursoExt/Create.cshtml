@@ -15,58 +15,17 @@
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         
         <h2>Solicitante: @ViewBag.IdCursoExt</h2>
-        @*<div class="form-group">
-            <label asp-for="IdSolicitud" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="IdSolicitud" class="form-control" />
-                <span asp-validation-for="IdSolicitud" class="text-danger" />
-            </div>
-        </div>*@
-
-
-
-       @*<div class="form-group">
-            <label asp-for="IdSolicitante" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="IdSolicitante" class="form-control" />@ViewBag.IdSolicitante
-                <span asp-validation-for="IdSolicitante" class="text-danger" />
-            </div>
-        </div>*@
-       
-        
-
-
-@*
-    <div class="form-group">
-        <label asp-for="IdSupervisor" class="col-md-2 control-label"></label>
-        <div class="col-md-10">
-            <input asp-for="IdSupervisor" class="form-control" />
-            <span asp-validation-for="IdSupervisor" class="text-danger" />
-        </div>
-    </div>*@
+     
         <div class="form-group">
             <label asp-for="IdCategoriaExt" class="col-md-2 control-label">Motivo</label>
             <div class="col-md-10">
-                @*<input asp-for="IdMotivo" class="form-control" />
-                <span asp-validation-for="IdMotivo" class="text-danger" />*@
+              
                 <select asp-for="IdCategoriaExt" class="form-control"
                         asp-items="@(new SelectList(ViewBag.CategoriaExt,"IdCategoriaExt", "NombreCategoriaExt"))"></select>
             
             
             </div>
         </div>
-
-
-
-        @*<div class="form-group">
-            <label asp-for="IdEstado" class="col-md-2 control-label">Estado</label>
-            <div class="col-md-10">
-                <input asp-for="IdEstado" class="form-control" />
-                <span asp-validation-for="IdEstado" class="text-danger" />
-            </div>
-        </div>*@
-
-
 
 
         <div class="form-group">
@@ -162,13 +121,6 @@
 
 
 
-        @*<div class="form-group">
-            <label asp-for="SustentoSupervisor" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="SustentoSupervisor" class="form-control" />
-                <span asp-validation-for="SustentoSupervisor" class="text-danger" />
-            </div>
-        </div>*@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

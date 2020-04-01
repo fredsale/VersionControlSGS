@@ -46,7 +46,7 @@ namespace CSGS.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            //builder.UseSqlServer("Server=MI302-VS2015-ST;Database=SGS;Trusted_Connection=True;");
+            //servidor local
             builder.UseSqlServer("Server=FRED;Database=SGS;Trusted_Connection=True;");
         }
 

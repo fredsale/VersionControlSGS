@@ -6,35 +6,28 @@
 }
 <br />
 <br />
-<h2>Lista de cursos disponible</h2>
+<h2>Lista de cursos disponibles</h2>
 
 <h4>Vista disponible para usuario Estudiante e Invitado</h4>
 
 <table class="table">
     <thead>
         <tr>
-            @*<th>
-                    Egresado
-                </th>*@
-            @*<th>
-                    @Html.DisplayNameFor(model => model.IdSolicitante)
-                </th>*@
+           
             <th>
-                @*@Html.DisplayNameFor(model => model.FechaViaje)*@
+               
                 Titulo Curso
             </th>
             <th>
-                @*@Html.DisplayNameFor(model => model.FechaViaje)*@
+              
                Categoria
             </th>
 
 
-            @*<th>
-                    @Html.DisplayNameFor(model => model.IdMotivo)
-                </th>*@
+           
             <th>Nivel Curso</th>
             <th>
-                @*@Localizer["Table_DuracionViaje"]*@
+              
                 Fecha inicio matricula
             </th>
             <th>
@@ -54,9 +47,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                @*<td>
-                        @Html.DisplayFor(modelItem => item.IdSolicitante)
-                    </td>*@
+             
 
                 <th>
                     @Html.DisplayFor(modelItem => item.TituloCursoExt)
@@ -83,8 +74,7 @@
 
                 <td>
 
-                    @*<a asp-action="Edit" asp-route-id="@item.IdSolicitud">Edit</a>*@
-
+                  
                     <a asp-action="EditSG" asp-route-id="@item.IdCursoExt">Ver mas</a>
 
 
@@ -97,118 +87,6 @@
     </tbody>
 </table>
 
-
-
-@*<form asp-action="IndexT">
-        <div class="form-horizontal">
-            <h4>CursoExt</h4>
-            <hr />
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="IdCursoExt" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="IdCursoExt" class="form-control" />
-                    <span asp-validation-for="IdCursoExt" class="text-danger" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdCategoriaExt" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="IdCategoriaExt" class="form-control" />
-                    <span asp-validation-for="IdCategoriaExt" class="text-danger" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="TituloCursoExt" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="TituloCursoExt" class="form-control" />
-                    <span asp-validation-for="TituloCursoExt" class="text-danger" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="DescripcionCursoExt" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="DescripcionCursoExt" class="form-control" />
-                    <span asp-validation-for="DescripcionCursoExt" class="text-danger" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="ObjetivosCurso" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="ObjetivosCurso" class="form-control" />
-                    <span asp-validation-for="ObjetivosCurso" class="text-danger" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="ReqCurso" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="ReqCurso" class="form-control" />
-                    <span asp-validation-for="ReqCurso" class="text-danger" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="TemarioCurso" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="TemarioCurso" class="form-control" />
-                    <span asp-validation-for="TemarioCurso" class="text-danger" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="NivelCurso" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="NivelCurso" class="form-control" />
-                    <span asp-validation-for="NivelCurso" class="text-danger" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaInicioClases" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="FechaInicioClases" class="form-control" />
-                    <span asp-validation-for="FechaInicioClases" class="text-danger" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaInicioMat" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="FechaInicioMat" class="form-control" />
-                    <span asp-validation-for="FechaInicioMat" class="text-danger" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="FechaFinMat" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="FechaFinMat" class="form-control" />
-                    <span asp-validation-for="FechaFinMat" class="text-danger" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="AudienciaCurso" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="AudienciaCurso" class="form-control" />
-                    <span asp-validation-for="AudienciaCurso" class="text-danger" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="DuracionCurso" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="DuracionCurso" class="form-control" />
-                    <span asp-validation-for="DuracionCurso" class="text-danger" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdAdmin" class="col-md-2 control-label"></label>
-                <div class="col-md-10">
-                    <input asp-for="IdAdmin" class="form-control" />
-                    <span asp-validation-for="IdAdmin" class="text-danger" />
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Create" class="btn btn-default" />
-                </div>
-            </div>
-        </div>
-    </form>*@
 
 <div>
     <a asp-action="IndexSG">Back to List</a>

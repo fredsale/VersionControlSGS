@@ -17,23 +17,10 @@ namespace CSGS.Data.DataAccess
 
             using (var db = new ApplicationDbContext())
             {
-                //IQueryable<Solicitud> query = db.Solicitud.Include(item => item.Estado);
-
+          
                 var query = db.CursoExt.Include(item => item.CategoriaExt);
                 query.OrderBy(item => item.CategoriaExt.NombreCategoriaExt);
-
-
-                //if (!String.IsNullOrWhiteSpace(nombre))
-                //{
-                //    query = query.Where(item => item.nombre.Contains(nombre));
-                //}
-
-           //no     //query.OrderBy(item => item.FechaViaje);
-                //Ordenando por dos o mas columnas (usar el método ThenBy ) en forma ascedente
-                //query.OrderBy(item => item.Nombre).ThenBy(item => item.CreationDate);
-                //Ordenando en forma descendente
-                //query.OrderByDescending(item => item.Nombre);
-
+                                    
                 listado = query.ToList();
             }
 
@@ -68,25 +55,6 @@ namespace CSGS.Data.DataAccess
             {
                 IQueryable<CursoExt> query = db.CursoExt.Include(item => item.CategoriaExt);
 
-
-                //var query = db.Solicitud.Include(item => item.Motivo);
-                //query.OrderBy(item => item.Estado.NombreEstado);
-
-
-                //if (!String.IsNullOrWhiteSpace(filtroByNombre))
-                //{
-                //    query = query.Where(item => item.Nombre.Contains(filtroByNombre));
-                //}
-
-                ////////if (filtroByIdEstado == 1)
-                ////////{
-                ////////    query = query.Where(item => item.IdEstado == filtroByIdEstado);
-                ////////}
-                ////////else if (filtroByIdEstado == 2)
-                ////////{
-                ////////    query = query.Where(item => item.IdEstado == filtroByIdEstado);
-                ////////}
-
                 query.OrderBy(item => item.IdCategoriaExt);
                 listado = query.ToList();
             }
@@ -97,10 +65,7 @@ namespace CSGS.Data.DataAccess
 
 
 
-
-
-
-
+        
 
 
         public CursoExt GetSolicitud(int idSoli)
@@ -116,7 +81,7 @@ namespace CSGS.Data.DataAccess
 
         public int InsertSolicitud(CursoExt entity)
         {
-            //var result = 0;
+          
             var result = 0;
             using (var db = new ApplicationDbContext())
             {
@@ -136,7 +101,6 @@ namespace CSGS.Data.DataAccess
             {
                 db.CursoExt.Attach(entity);
                 db.Entry(entity).State = EntityState.Modified;
-                //db.Entry(entity).Property(item => item.IdEstado).IsModified = false;
                 result = db.SaveChanges() != 0; //Guardando en base de datos
             }
 
